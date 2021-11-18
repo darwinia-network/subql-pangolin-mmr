@@ -1,0 +1,28 @@
+{
+  "name": "subql-pangolin-mmr",
+  "version": "1.0.0",
+  "description": "Indexing mmr nodes from substrate chains.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -b",
+    "prepack": "rm -rf dist && npm build",
+    "test": "jest",
+    "start": "docker-compose pull && docker-compose up --remove-orphans",
+    "codegen": "./node_modules/.bin/subql codegen"
+  },
+  "homepage": "https://github.com/subquery/subql-starter",
+  "repository": "github:subquery/subql-starter",
+  "files": [
+    "dist",
+    "schema.graphql",
+    "project.yaml"
+  ],
+  "author": "HackFisher",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@polkadot/api": "^6",
+    "@subql/cli": "latest",
+    "@subql/types": "latest",
+    "typescript": "^4.1.3"
+  }
+}

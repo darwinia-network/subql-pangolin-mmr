@@ -1,0 +1,8 @@
+type NodeEntity @entity {
+
+  id: ID! #id is a required field
+
+  position: Int!
+
+  hash: String!
+}
