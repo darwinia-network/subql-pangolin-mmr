@@ -9,20 +9,14 @@ const registry = new TypeRegistry();
 export class BlockHandler {
   private block: SubstrateBlock;
 
-  // assert_eq!(get_peaks(leaf_index_to_mmr_size(1394000)), vec![2097150, 2621437, 2752508, 2785275, 2787322, 2787833, 2787960, 2787991, 2787992]);
+  // assert_eq!(get_peaks(leaf_index_to_mmr_size(10)), vec![14, 17, 18]);
   private readonly peaks: [number, string][] = [
-    [2097150, "0xb1a4ca4945897afc88667806b7e33087184a3ea11fb368bb55e217b57b0b4c15"],
-    [2621437, "0xf36d5add674602d7042f61452aae1e41ad240a299e604820ad8b59a3e3c90286"],
-    [2752508, "0xe81e96b7ad56d9e4291ced80dc6aa266e67cf4a019a862fd5ec135ca56a6d261"],
-    [2785275, "0x15d17ccd65c117dc91d121883f7a952a6e31e6a19356c4ba1cbac19b40ba2b84"],
-    [2787322, "0x577acd6770e5e83d137b798dd80543b0cb26167000f1ddffa80896b496312c26"],
-    [2787833, "0x6bfd4d14cb36af6a9adefa32a9aaee26a6d05a69b708cd632cc9833e5d5b57e0"],
-    [2787960, "0x99d597140a1804b6afccc44ec974cad584f1b93dc8765ea5744c3bf39c34812e"],
-    [2787991, "0xb0f7776974e0129d18ca194744eee971a589a619a8e20db07f2b43ccbca7a955"],
-    [2787992, "0xef791e4887ef328df6f352e19ad3a11f5c4cb6d6ea73e361cdff222d1cec865c"]
+    [14, "0x0fd08918c7f06e049b78c9a7a247786d48529c72ed8ce76f35430c272e4c93f5"],
+    [17, "0xc21a0937a25282d56ba3801dc3d46ba374e549050463c64e6989800f10cce147"],
+    [18, "0x5a1c9a86f4009afd9f5945898e3f27722d727df60ac3190c8a924fa46b0d7291"]
   ];
 
-  private beginBlock = 1394001;
+  private beginBlock = 11;
 
   static async ensureNode(id: string): Promise<void> {
     const block = await NodeEntity.get(id);
